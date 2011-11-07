@@ -58,6 +58,7 @@ def get_reply_text(email_text):
     #Search for prefix when message has been forwarded
     #Search for From: <email@domain.tld>\nTo: <email@domain.tld>\nDate:<email@domain.tld
     #Search for From:, To:, Sent:
+    #Search for 16/05/2011 <some.person@domain.tld>:
     #Some clients use -*Original Message-*
     pattern = "(?P<reply_text>" + \
         "On ([a-zA-Z0-9, :/<>@\.\"\[\]]* wrote:.*)|" + \
@@ -67,6 +68,7 @@ def get_reply_text(email_text):
         "From: [\w@ \.<>\-]*(\n|\r\n)To: [\w@ \.<>\-]*(\n|\r\n)Date: [\w@ \.<>\-:,]*\n.*|" + \
         "From: [\w@ \.<>\-]*(\n|\r\n)To: [\w@ \.<>\-]*(\n|\r\n)Sent: [\*\w@ \.,:/]*(\n|\r\n).*|" + \
         "From: [\w@ \.<>\-]*(\n|\r\n)To: [\w@ \.<>\-]*(\n|\r\n)Subject:.*|" + \
+        "[\*\w@ \.,:/]* [\w@ \.<>\-]*:.*|" + \
         "(-| )*Original Message(-| )*.*)"
     groups = re.search(pattern, email_text, re.IGNORECASE + re.DOTALL)
     reply_text = None
