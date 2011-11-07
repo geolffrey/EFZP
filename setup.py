@@ -7,7 +7,7 @@ except:
 
 setup(
     name = 'efzp',
-    version = '1.0',
+    version = '1.01',
     description = 'Describe an email in terms of salutation, body, signature, reply text etc.',
     author = 'Dave Trindall',
     url = 'https://github.com/Trindaz/EFZP',
