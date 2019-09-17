@@ -1,5 +1,0 @@
-  EFZP
-  Copyright 2011 Chorus Technologies Inc
-
-  This product includes software developed at
-  Chorus (http://www.chorusindex.com/).
